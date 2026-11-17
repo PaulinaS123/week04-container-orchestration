@@ -152,3 +152,73 @@ Containerization makes applications more portable and reproducible by packaging 
 Docker Compose simplifies running multiple services, scaling application replicas, and configuring health checks and restart policies.
 
 However, containerized deployments also require attention to image security, resource usage, networking, and orchestration configuration.
+
+## AI Prompt Appendix
+
+**AI Tool:** ChatGPT (OpenAI)
+
+### Prompt 1 — Initial Application and Docker Configuration
+
+The initial assignment prompt requested:
+
+> Act as a senior DevOps and cloud infrastructure architect. I need to containerize and orchestrate a lightweight web application (e.g., Node.js, Python FastAPI, or Go).
+
+The requested deliverables included a production-ready multi-stage Dockerfile, non-root execution, a `/healthz` endpoint, Docker Compose orchestration, and application code.
+
+**AI Output:** A Node.js Express application, an initial Dockerfile, and Docker Compose configuration.
+
+### Prompt 2 — Docker Installation and Verification
+
+Assistance was requested to install Docker Desktop, verify Docker CLI functionality, and run the `hello-world` container.
+
+**Result:** Docker Desktop was installed and successfully verified.
+
+### Prompt 3 — Docker Compose Troubleshooting
+
+The following terminal error was shared with ChatGPT:
+
+```text
+error mounting nginx.conf to /etc/nginx/nginx.conf:
+not a directory
+```
+
+**Result:** The `nginx.conf` path was identified as an empty directory and corrected to a configuration file.
+
+### Prompt 4 — Nginx Configuration Debugging
+
+The following error was provided:
+
+```text
+nginx: [emerg] no "events" section in configuration
+```
+
+**Result:** The configuration was corrected to include the required `events {}` section.
+
+### Prompt 5 — Self-Healing Verification
+
+Docker reported:
+
+```text
+Status=exited ExitCode=137
+OOMKilled=false RestartCount=0
+```
+
+ChatGPT assisted with diagnosing container termination and verifying the restart policy.
+
+A temporary test endpoint was introduced to simulate application failure using `process.exit(1)`.
+
+**Result:** Docker recorded two automatic restarts:
+
+```text
+Status=running RestartCount=2
+```
+
+The temporary crash-test endpoint was subsequently removed.
+
+### Prompt 6 — QA and GitHub Preparation
+
+ChatGPT assisted with verifying HTTP responses, resource limits, browser DevTools results, `.gitignore`, Git configuration, and README documentation.
+
+**Result:** The application passed the verified container, health-check, load-balancing, and self-healing tests.
+
+
