@@ -221,4 +221,14 @@ ChatGPT assisted with verifying HTTP responses, resource limits, browser DevTool
 
 **Result:** The application passed the verified container, health-check, load-balancing, and self-healing tests.
 
+## Containerization Trade-offs
+
+This project helped me understand how Docker improves application portability and consistency by packaging the runtime environment with the application.
+
+Using Docker Compose made it easier to deploy multiple containers, control resource usage, and configure health checks and restart policies.
+
+However, containerization introduces additional complexity. I encountered configuration issues with Nginx, learned how container networking works, and had to troubleshoot unexpected container behavior during self-healing tests.
+
+One important lesson was that a healthy container does not automatically prove that self-healing works. I needed to simulate an application failure and verify the restart count to confirm automatic recovery.
+
 
